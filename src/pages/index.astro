@@ -1,11 +1,13 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Cards from '../components/Cards.astro';
+import {getPageInfo} from '../lib/wp';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const {title, hero_parrafo, boton, texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1} = await getPageInfo("home")
 ---
 
 <Layout>
-	<Welcome />
+	<Hero title={title}, hero_parrafo={hero_parrafo}, boton={boton}/>
+	<Cards texto_cm={texto_cm}, subtitulo_cm={subtitulo_cm}, parrafo_cm={parrafo_cm}, titulo_card_1={titulo_card_1}, texto_card_1={texto_card_1}/>
 </Layout>
