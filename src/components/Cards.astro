@@ -10,9 +10,20 @@ interface Props {
 const { texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1 } = Astro.props;
 ---
 
-<section class="py-16 sm:py-24 bg-white" aria-labelledby="steps-heading">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <div class="text-center">
+<section class="relative py-16 sm:py-24 bg-white" aria-labelledby="steps-heading">
+  <!-- Fondo de imagen -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/path/to/your/image.png" 
+      alt="Fondo decorativo" 
+      class="w-full h-full object-cover opacity-20" 
+    />
+    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-4xl mx-auto">
       <p class="text-blue-600 text-sm font-semibold tracking-wide uppercase animate-fade-in">
         {texto_cm}
       </p>
@@ -28,16 +39,25 @@ const { texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1 } = Astr
       </p>
     </div>
 
-    <div class="mt-12 sm:mt-16">
-      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
-        <!-- Step 1 -->
-        <div class="relative group animate-fade-in-up">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div class="relative bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition duration-300">
+    <!-- Grid Cards -->
+    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      {Array.from({ length: 3 }).map((_, i) => (
+        <div class={`relative group animate-fade-in-up animation-delay-${i * 200}`}>
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition duration-300 backdrop-blur-md bg-opacity-90">
             <div class="flex flex-col items-center text-center">
-              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
-                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-100 mb-6">
+                <svg class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round" 
+                    stroke-width="2" 
+                    d={
+                      i === 0 ? "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      : i === 1 ? "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+                      : "M13 10V3L4 14h7v7l9-11h-7z"
+                    }
+                  />
                 </svg>
               </div>
               <h3 class="text-xl font-semibold text-gray-900 mb-4">{titulo_card_1}</h3>
@@ -45,45 +65,12 @@ const { texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1 } = Astr
             </div>
           </div>
         </div>
-
-        <!-- Step 2 -->
-        <div class="relative group animate-fade-in-up animation-delay-200">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div class="relative bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition duration-300">
-            <div class="flex flex-col items-center text-center">
-              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
-                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">{titulo_card_1}</h3>
-              <p class="text-gray-600">{texto_card_1}</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Step 3 -->
-        <div class="relative group animate-fade-in-up animation-delay-400">
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div class="relative bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition duration-300">
-            <div class="flex flex-col items-center text-center">
-              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
-                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">{titulo_card_1}</h3>
-              <p class="text-gray-600">{texto_card_1}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
   </div>
 </section>
 
 <style>
-  /* Fade-in animation for cards */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -95,15 +82,19 @@ const { texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1 } = Astr
     }
   }
 
-  .relative {
+  .animate-fade-in-up {
     animation: fadeIn 0.6s ease-out forwards;
   }
 
-  .relative:nth-child(2) {
+  .animation-delay-0 {
+    animation-delay: 0s;
+  }
+
+  .animation-delay-200 {
     animation-delay: 0.2s;
   }
 
-  .relative:nth-child(3) {
+  .animation-delay-400 {
     animation-delay: 0.4s;
   }
 </style>
