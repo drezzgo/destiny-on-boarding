@@ -8,40 +8,47 @@ interface Props {
 const { title, hero_parrafo, boton } = Astro.props;
 ---
 
-<section class="relative overflow-hidden bg-gradient-to-br from-blue-50 to-white py-20 sm:py-32">
-  <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-  
-  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="relative overflow-hidden h-screen flex items-center justify-center text-center">
+  <!-- Video de fondo -->
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    class="absolute inset-0 w-full h-full object-cover z-0"
+    src="/videos/background-hero.mp4"
+  >
+    Tu navegador no soporta el video.
+  </video>
+
+  <!-- Capa de oscurecimiento (mejora contraste del texto) -->
+  <div class="absolute inset-0 bg-white bg-opacity-80 dark:bg-gray-200 dark:bg-opacity-60 z-10"></div>
+
+  <!-- Contenido del Hero -->
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 tracking-tight animate-fade-in-up">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight animate-fade-in-up">
         {title}
       </h1>
-      
-      <p class="mt-6 text-xl sm:text-2xl text-gray-600 leading-relaxed animate-fade-in-up animation-delay-200">
+
+      <p class="mt-6 text-xl sm:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed animate-fade-in-up animation-delay-200">
         {hero_parrafo}
       </p>
-      
+
       <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
         <a 
           href="#programs" 
-          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105"
+          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-yellow-300 rounded-lg shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105"
         >
           {boton}
           <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>
         </a>
-        
-        <a 
-          href="#how-it-works" 
-          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-blue-600 bg-white rounded-lg shadow-lg hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all duration-300"
-        >
-          How it works
-        </a>
       </div>
     </div>
   </div>
-  
-  <!-- Decorative elements -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+
+  <!-- Gradiente decorativo inferior -->
+  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent z-10"></div>
 </section>
