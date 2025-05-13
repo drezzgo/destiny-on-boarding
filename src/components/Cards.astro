@@ -1,28 +1,105 @@
 ---
-const {texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1} = Astro.props;
+interface Props {
+  texto_cm: string;
+  subtitulo_cm: string;
+  parrafo_cm: string;
+  titulo_card_1: string;
+  texto_card_1: string;
+}
+
+const { texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1 } = Astro.props;
 ---
 
-<section class="max-w-5xl mx-auto flex flex-col items-center text-center my-20">
-    <div class="mx-36 mb-20 flex flex-col gap-6">
-        <p class="uppercase text-cyan-600 text-lg" set:text={texto_cm}></p>
-        <h2 class="mx-8 text-4xl font-bold" set:text={subtitulo_cm}></h2>
-        <p class="mx-8" set:text={parrafo_cm}></p>
+<section class="py-16 sm:py-24 bg-white" aria-labelledby="steps-heading">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <p class="text-blue-600 text-sm font-semibold tracking-wide uppercase animate-fade-in">
+        {texto_cm}
+      </p>
+      <h2 id="steps-heading" class="mt-2 text-3xl sm:text-4xl font-extrabold text-gray-900 animate-fade-in animation-delay-200">
+        {subtitulo_cm}
+      </h2>
+      <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-500 animate-fade-in animation-delay-400">
+        {parrafo_cm}
+      </p>
     </div>
-    <div class="p-32 grid grid-cols-3 gap-4 bg-gray-300">
-        <div class="flex flex-col gap-2 items-center text-center p-6 bg-red-300 hover:bg-red-500 hover:text-white transition-all duration-300">
-            <img class="size-24 invert hover:invert-0 transition-all duration-300" src="/favicon.svg" alt="Icono de ejemplo" loading="lazy">
-            <h3 class="font-semibold text-lg transition-transform duration-300 hover:scale-105" set:text={titulo_card_1}/>
-            <p class="font-light text-base transition-transform duration-300 hover:scale-105" set:text={texto_card_1}/>
+
+    <div class="mt-12 sm:mt-16">
+      <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <!-- Step 1 -->
+        <div class="relative group animate-fade-in-up">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div class="relative bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition duration-300">
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
+                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">{titulo_card_1}</h3>
+              <p class="text-gray-600">{texto_card_1}</p>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col gap-2 items-center text-center p-6 bg-blue-300 hover:bg-blue-500 hover:text-white transition-all duration-300">
-            <img class="size-24 invert hover:invert-0 transition-all duration-300" src="/favicon.svg" alt="Icono de ejemplo" loading="lazy">
-            <h3 class="font-semibold text-lg transition-transform duration-300 hover:scale-105" set:text={titulo_card_1}/>
-            <p class="font-light text-base transition-transform duration-300 hover:scale-105" set:text={texto_card_1}/>
+
+        <!-- Step 2 -->
+        <div class="relative group animate-fade-in-up animation-delay-200">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div class="relative bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition duration-300">
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
+                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">{titulo_card_1}</h3>
+              <p class="text-gray-600">{texto_card_1}</p>
+            </div>
+          </div>
         </div>
-        <div class="flex flex-col gap-2 items-center text-center p-6 bg-amber-300 hover:bg-yellow-500 hover:text-white transition-all duration-300">
-            <img class="size-24 invert hover:invert-0 transition-all duration-300" src="/favicon.svg" alt="Icono de ejemplo" loading="lazy">
-            <h3 class="font-semibold text-lg transition-transform duration-300 hover:scale-105" set:text={titulo_card_1}/>
-            <p class="font-light text-base transition-transform duration-300 hover:scale-105" set:text={texto_card_1}/>
+
+        <!-- Step 3 -->
+        <div class="relative group animate-fade-in-up animation-delay-400">
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+          <div class="relative bg-white rounded-lg p-8 shadow-lg hover:shadow-xl transition duration-300">
+            <div class="flex flex-col items-center text-center">
+              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 mb-6">
+                <svg class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">{titulo_card_1}</h3>
+              <p class="text-gray-600">{texto_card_1}</p>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </section>
+
+<style>
+  /* Fade-in animation for cards */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .relative {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .relative:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .relative:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+</style>

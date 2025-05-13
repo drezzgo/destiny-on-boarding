@@ -2,26 +2,79 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+}
+
+const {
+	title = "Destiny On Board - International Education Agency",
+	description = "Your trusted partner in international education. We help students achieve their dreams of studying abroad in Canada, the U.S., Australia, and Europe.",
+	image = "/og-image.jpg"
+} = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Destiny On Boarding</title>
-		<meta name="description" content="Descripción breve de tu página" />
-		<meta name="keywords" content="palabras clave relevantes" />
-		<meta name="author" content="Tu nombre o empresa" />
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={image} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content={Astro.url} />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		<meta property="twitter:image" content={image} />
+		
+		<!-- Preload Critical Resources -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "EducationalOrganization",
+				"name": "Destiny On Board",
+				"description": description,
+				"url": Astro.url,
+				"logo": "/logo.svg",
+				"sameAs": [
+					"https://facebook.com/destinyonboard",
+					"https://twitter.com/destinyonboard",
+					"https://instagram.com/destinyonboard"
+				]
+			}
+		</script>
 	</head>
-	<body>
-		<Header></Header>
-		<main>
-			<slot></slot>
+	<body class="antialiased text-gray-900 bg-white">
+		<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-white focus:text-blue-600">
+			Skip to main content
+		</a>
+		
+		<Header />
+		
+		<main id="main-content">
+			<slot />
 		</main>
-		<Footer></Footer>
+		
+		<Footer />
 	</body>
-
 </html>

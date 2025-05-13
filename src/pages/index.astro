@@ -2,12 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Cards from '../components/Cards.astro';
+import Testimonials from '../components/Testimonials.astro';
+import PopularPrograms from '../components/PopularPrograms.astro';
+import AboutUs from '../components/AboutUs.astro';
+import FAQ from '../components/FAQ.astro';
+import ContactForm from '../components/ContactForm.astro';
 import {getPageInfo} from '../lib/wp';
 
 const {title, hero_parrafo, boton, texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1} = await getPageInfo("home")
 ---
 
 <Layout>
-	<Hero title={title}, hero_parrafo={hero_parrafo}, boton={boton}/>
-	<Cards texto_cm={texto_cm}, subtitulo_cm={subtitulo_cm}, parrafo_cm={parrafo_cm}, titulo_card_1={titulo_card_1}, texto_card_1={texto_card_1}/>
+	<main>
+		<Hero title={title}, hero_parrafo={hero_parrafo}, boton={boton}/>
+		<Cards texto_cm={texto_cm}, subtitulo_cm={subtitulo_cm}, parrafo_cm={parrafo_cm}, titulo_card_1={titulo_card_1}, texto_card_1={texto_card_1}/>
+		<Testimonials />
+		<PopularPrograms />
+		<AboutUs />
+		<FAQ />
+		<ContactForm />
+	</main>
 </Layout>
