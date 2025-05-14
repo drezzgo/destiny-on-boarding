@@ -10,8 +10,13 @@ export const getPageInfo = async (slug: string) => {
         title: {rendered: title },
         acf: {hero_paragraph},
         acf: {button},
+        acf: {text1_how_it_works},
+        acf: {subtitle_how_it_works},
+        acf: {text_how_it_works},
+        acf: {title_card_1_how_it_works},
+        acf: {paragraph_card_1_how_it_works}
     } = data;
     console.log(data);
 
-    return { title, hero_paragraph, button };
+    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works };
 }
