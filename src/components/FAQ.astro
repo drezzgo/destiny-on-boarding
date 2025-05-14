@@ -1,5 +1,5 @@
 ---
-// FAQ component for Destiny On Board
+// FAQ component for Destiny On Board – optimized using native <details> and Tailwind
 ---
 
 <section class="py-16 bg-white" aria-labelledby="faq-heading">
@@ -10,116 +10,63 @@
       </h2>
     </div>
 
-    <div class="mt-12 max-w-3xl mx-auto">
-      <div class="space-y-6">
-        <!-- FAQ Item 1 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button
-            class="w-full px-6 py-4 text-left focus:outline-none"
-            aria-expanded="false"
-            aria-controls="faq-1"
-          >
-            <h3 class="text-lg font-medium text-gray-900">
-              Do I have to pay for the consultation?
-            </h3>
-          </button>
-          <div id="faq-1" class="px-6 pb-4">
-            <p class="text-gray-600">
-              Nope. Your first consultation is 100% free. We'll help you understand your options and give you a personalized migration plan—no strings attached.
-            </p>
-          </div>
+    <div class="mt-12 max-w-3xl mx-auto space-y-6">
+      <!-- FAQ Item -->
+      <details class="group bg-white rounded-lg shadow overflow-hidden transition-all">
+        <summary class="px-6 py-4 cursor-pointer text-left text-lg font-medium text-gray-900 flex justify-between items-center">
+          Do I have to pay for the consultation?
+          <span class="transform transition-transform duration-300 group-open:rotate-45 text-xl">+</span>
+        </summary>
+        <div class="px-6 pb-4 pt-2 text-gray-600">
+          Nope. Your first consultation is 100% free. We'll help you understand your options and give you a personalized migration plan—no strings attached.
         </div>
+      </details>
 
-        <!-- FAQ Item 2 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button
-            class="w-full px-6 py-4 text-left focus:outline-none"
-            aria-expanded="false"
-            aria-controls="faq-2"
-          >
-            <h3 class="text-lg font-medium text-gray-900">
-              Is this a visa agency?
-            </h3>
-          </button>
-          <div id="faq-2" class="px-6 pb-4">
-            <p class="text-gray-600">
-              No. We're not a typical agency. We're a team of people who've lived the same journey—and now help students plan it with clarity, step-by-step.
-            </p>
-          </div>
+      <details class="group bg-white rounded-lg shadow overflow-hidden transition-all">
+        <summary class="px-6 py-4 cursor-pointer text-left text-lg font-medium text-gray-900 flex justify-between items-center">
+          Is this a visa agency?
+          <span class="transform transition-transform duration-300 group-open:rotate-45 text-xl">+</span>
+        </summary>
+        <div class="px-6 pb-4 pt-2 text-gray-600">
+          No. We're not a typical agency. We're a team of people who've lived the same journey—and now help students plan it with clarity, step-by-step.
         </div>
+      </details>
 
-        <!-- FAQ Item 3 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button
-            class="w-full px-6 py-4 text-left focus:outline-none"
-            aria-expanded="false"
-            aria-controls="faq-3"
-          >
-            <h3 class="text-lg font-medium text-gray-900">
-              Can you guarantee I'll get a visa or PR?
-            </h3>
-          </button>
-          <div id="faq-3" class="px-6 pb-4">
-            <p class="text-gray-600">
-              We don't believe in fake promises. What we offer is strategy, clarity, and honest guidance to improve your chances based on your real situation.
-            </p>
-          </div>
+      <details class="group bg-white rounded-lg shadow overflow-hidden transition-all">
+        <summary class="px-6 py-4 cursor-pointer text-left text-lg font-medium text-gray-900 flex justify-between items-center">
+          Can you guarantee I'll get a visa or PR?
+          <span class="transform transition-transform duration-300 group-open:rotate-45 text-xl">+</span>
+        </summary>
+        <div class="px-6 pb-4 pt-2 text-gray-600">
+          We don't believe in fake promises. What we offer is strategy, clarity, and honest guidance to improve your chances based on your real situation.
         </div>
+      </details>
 
-        <!-- FAQ Item 4 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button
-            class="w-full px-6 py-4 text-left focus:outline-none"
-            aria-expanded="false"
-            aria-controls="faq-4"
-          >
-            <h3 class="text-lg font-medium text-gray-900">
-              Who will I talk to during the consultation?
-            </h3>
-          </button>
-          <div id="faq-4" class="px-6 pb-4">
-            <p class="text-gray-600">
-              You'll speak with someone from our team who understands your goals and situation. Not a robot. Not a generic advisor. A real person who's done this before.
-            </p>
-          </div>
+      <details class="group bg-white rounded-lg shadow overflow-hidden transition-all">
+        <summary class="px-6 py-4 cursor-pointer text-left text-lg font-medium text-gray-900 flex justify-between items-center">
+          Who will I talk to during the consultation?
+          <span class="transform transition-transform duration-300 group-open:rotate-45 text-xl">+</span>
+        </summary>
+        <div class="px-6 pb-4 pt-2 text-gray-600">
+          You'll speak with someone from our team who understands your goals and situation. Not a robot. Not a generic advisor. A real person who's done this before.
         </div>
+      </details>
 
-        <!-- FAQ Item 5 -->
-        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-          <button
-            class="w-full px-6 py-4 text-left focus:outline-none"
-            aria-expanded="false"
-            aria-controls="faq-5"
-          >
-            <h3 class="text-lg font-medium text-gray-900">
-              What's included in the free plan?
-            </h3>
-          </button>
-          <div id="faq-5" class="px-6 pb-4">
-            <p class="text-gray-600">
-              We'll map out:
-            </p>
-            <ul class="mt-2 list-disc list-inside text-gray-600">
-              <li>Timelines, key requirements, and first steps</li>
-              <li>Your best options based on your current visa or goal</li>
-              <li>What programs make sense for your case</li>
-              <li>A step-by-step strategy to stay or study</li>
-            </ul>
-          </div>
+      <details class="group bg-white rounded-lg shadow overflow-hidden transition-all">
+        <summary class="px-6 py-4 cursor-pointer text-left text-lg font-medium text-gray-900 flex justify-between items-center">
+          What's included in the free plan?
+          <span class="transform transition-transform duration-300 group-open:rotate-45 text-xl">+</span>
+        </summary>
+        <div class="px-6 pb-4 pt-2 text-gray-600">
+          <p>We'll map out:</p>
+          <ul class="mt-2 list-disc list-inside text-gray-600">
+            <li>Timelines, key requirements, and first steps</li>
+            <li>Your best options based on your current visa or goal</li>
+            <li>What programs make sense for your case</li>
+            <li>A step-by-step strategy to stay or study</li>
+          </ul>
         </div>
-      </div>
+      </details>
     </div>
   </div>
 </section>
-
-<script>
-  // Add JavaScript for accordion functionality
-  document.querySelectorAll('button[aria-expanded]').forEach(button => {
-    button.addEventListener('click', () => {
-      const expanded = button.getAttribute('aria-expanded') === 'true';
-      button.setAttribute('aria-expanded', !expanded);
-      const content = document.getElementById(button.getAttribute('aria-controls'));
-      content.style.display = expanded ? 'none' : 'block';
-    });
-  });
-</script> 
