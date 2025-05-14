@@ -1,15 +1,29 @@
 ---
-// Testimonials component for Destiny On Board
+interface Props {
+  title_wpas: string;
+  paragraph_wpas: string;
+  paragraph_testimonial_1_wpas: string;
+  paragraph_testimonial_2_wpas: string;
+  paragraph_testimonial_3_wpas: string;
+  name_1_wpas: string;
+  name_2_wpas: string;
+  name_3_wpas: string
+  job_1_wpas: string;
+  job_2_wpas: string;
+  job_3_wpas: string;
+}
+
+const { title_wpas, paragraph_wpas, paragraph_testimonial_1_wpas, paragraph_testimonial_2_wpas, paragraph_testimonial_3_wpas, name_1_wpas, name_2_wpas, name_3_wpas, job_1_wpas, job_2_wpas, job_3_wpas } = Astro.props;
 ---
 
 <section class="py-16 bg-gray-50" aria-labelledby="testimonials-heading">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
       <h2 id="testimonials-heading" class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        What People are Saying
+        {title_wpas}
       </h2>
       <p class="mt-4 text-lg text-gray-600">
-        Real students. Real stories. Real results. Hear how Destiny On Board helped students just like you move, study, and succeed around the world.
+        {paragraph_wpas}
       </p>
     </div>
 
@@ -28,12 +42,12 @@
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          "Destiny On Board helped me navigate the complex process of studying abroad. Their guidance was invaluable in making my dream a reality."
+          {paragraph_testimonial_1_wpas}
         </p>
         <div class="flex items-center">
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">Richard Owens</p>
-            <p class="text-sm text-gray-500">Designer</p>
+            <p class="text-sm font-medium text-gray-900">{name_1_wpas}</p>
+            <p class="text-sm text-gray-500">{job_1_wpas}</p>
           </div>
         </div>
       </div>
@@ -52,12 +66,12 @@
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          "The team at Destiny On Board made the entire process smooth and stress-free. Their expertise in international education is unmatched."
+          {paragraph_testimonial_2_wpas}
         </p>
         <div class="flex items-center">
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">Rhonda Key</p>
-            <p class="text-sm text-gray-500">Designer</p>
+            <p class="text-sm font-medium text-gray-900">{name_2_wpas}</p>
+            <p class="text-sm text-gray-500">{job_2_wpas}</p>
           </div>
         </div>
       </div>
@@ -76,12 +90,12 @@
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          "Thanks to Destiny On Board, I was able to find the perfect program and successfully obtain my student visa. Highly recommended!"
+          {paragraph_testimonial_3_wpas}
         </p>
         <div class="flex items-center">
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">Sarah Chen</p>
-            <p class="text-sm text-gray-500">Student</p>
+            <p class="text-sm font-medium text-gray-900">{name_3_wpas}</p>
+            <p class="text-sm text-gray-500">{job_3_wpas}</p>
           </div>
         </div>
       </div>
