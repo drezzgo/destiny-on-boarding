@@ -9,17 +9,13 @@ import FAQ from '../components/FAQ.astro';
 import ContactForm from '../components/ContactForm.astro';
 import {getPageInfo} from '../lib/wp';
 
-const {title, hero_parrafo, boton, texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1} = await getPageInfo("home")
+// const {title, hero_parrafo, boton, texto_cm, subtitulo_cm, parrafo_cm, titulo_card_1, texto_card_1} = await getPageInfo("home")
+const {title, hero_paragraph, button} = await getPageInfo("homee")
 ---
 
 <Layout>
 	<main>
-		<Hero title={title}, hero_parrafo={hero_parrafo}, boton={boton}/>
-		<Cards texto_cm={texto_cm}, subtitulo_cm={subtitulo_cm}, parrafo_cm={parrafo_cm}, titulo_card_1={titulo_card_1}, texto_card_1={texto_card_1}/>
-		<Testimonials />
-		<PopularPrograms />
-		<AboutUs />
-		<FAQ />
-		<ContactForm />
+		<Hero title={title}, hero_parrafo={hero_paragraph}, boton={button}/>
+
 	</main>
 </Layout>
