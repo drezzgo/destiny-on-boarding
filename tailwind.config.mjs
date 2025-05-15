@@ -6,8 +6,24 @@ export default {
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
         'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
+        float: 'float 3s ease-in-out infinite',
+        shine: 'shine 4s ease-in-out infinite',
+        starPulse: 'starPulse 1.5s ease-in-out infinite',
       },
+
       keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
+        shine: {
+          '0%, 100%': { opacity: 1 },
+          '50%': { opacity: 0.5 },
+        },
+        starPulse: {
+          '0%, 100%': { transform: 'scale(1)', opacity: 1 },
+          '50%': { transform: 'scale(1.2)', opacity: 0.8 },
+        },
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
