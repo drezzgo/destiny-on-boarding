@@ -9,36 +9,39 @@ const { title, hero_parrafo, boton } = Astro.props;
 ---
 
 <section class="relative overflow-hidden h-screen flex items-center justify-center text-center">
+  <!-- Gradiente decorativo superior -->
+  <div class="absolute top-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-b from-yellow-100 via-yellow-300/40 to-transparent z-10"></div>
+
   <!-- Video de fondo -->
   <video 
     autoplay 
     muted 
     loop 
     playsinline 
-    class="absolute inset-0 w-full h-full object-cover z-0"
-    src="/videos/background-hero.mp4"
+    class="absolute inset-0 w-full h-full max-h-screen min-h-full object-cover z-0"
   >
-    Tu navegador no soporta el video.
+    <source src="https://destinyonboard.com/wp-content/uploads/2025/05/3.mp4" type="video/mp4" />
+    Tu navegador no soporta la reproducción de video.
   </video>
 
-  <!-- Capa de oscurecimiento (mejora contraste del texto) -->
-  <div class="absolute inset-0 bg-white bg-opacity-80 dark:bg-gray-200 dark:bg-opacity-60 z-10"></div>
+  <!-- Capa de oscurecimiento -->
+  <div class="absolute inset-0 z-10"></div>
 
   <!-- Contenido del Hero -->
-  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 sm:pt-0">
     <div class="text-center max-w-3xl mx-auto">
-      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight animate-fade-in-up">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-bold text-gray-900 dark:text-white tracking-tight animate-fade-in-up">
         {title}
       </h1>
 
-      <p class="mt-6 text-xl sm:text-2xl text-white-700 dark:text-white leading-relaxed animate-fade-in-up animation-delay-200">
+      <p class="mt-4 sm:mt-6 text-lg sm:text-2xl text-gray-800 dark:text-white leading-relaxed animate-fade-in-up animation-delay-200">
         {hero_parrafo}
       </p>
 
-      <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
+      <div class="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-400">
         <a 
           href="#programs" 
-          class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-black bg-yellow-300 rounded-lg shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105"
+          class="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-black bg-yellow-300 rounded-lg shadow-lg hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 transition-all duration-300 transform hover:scale-105"
         >
           {boton}
           <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -50,5 +53,5 @@ const { title, hero_parrafo, boton } = Astro.props;
   </div>
 
   <!-- Gradiente decorativo inferior -->
-  <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent z-10"></div>
+  <div class="absolute bottom-0 left-0 right-0 h-24 sm:h-32 bg-gradient-to-t from-yellow-100 via-yellow-300/30 to-transparent z-10"></div>
 </section>
