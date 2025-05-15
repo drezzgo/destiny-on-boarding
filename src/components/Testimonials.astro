@@ -2,18 +2,18 @@
 interface Props {
   title_wpas: string;
   paragraph_wpas: string;
-  paragraph_testimonial_1_wpas: string;
-  paragraph_testimonial_2_wpas: string;
-  paragraph_testimonial_3_wpas: string;
-  name_1_wpas: string;
-  name_2_wpas: string;
-  name_3_wpas: string
-  job_1_wpas: string;
-  job_2_wpas: string;
-  job_3_wpas: string;
+  paragraph_testimonial_1: string;
+  name_testimonial_1: string;
+  job_testimonial_1: string;
+  paragraph_testimonial_2: string;
+  name_testimonial_2: string;
+  job_testimonial_2: string;
+  paragraph_testimonial_3: string;
+  name_testimonial_3: string;
+  job_testimonial_3: string;
 }
 
-const { title_wpas, paragraph_wpas, paragraph_testimonial_1_wpas, paragraph_testimonial_2_wpas, paragraph_testimonial_3_wpas, name_1_wpas, name_2_wpas, name_3_wpas, job_1_wpas, job_2_wpas, job_3_wpas } = Astro.props;
+const { title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3} = Astro.props;
 ---
 
 <section class="py-16 bg-gray-50" aria-labelledby="testimonials-heading">
@@ -42,12 +42,12 @@ const { title_wpas, paragraph_wpas, paragraph_testimonial_1_wpas, paragraph_test
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          {paragraph_testimonial_1_wpas}
+          {paragraph_testimonial_1}
         </p>
         <div class="flex items-center">
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">{name_1_wpas}</p>
-            <p class="text-sm text-gray-500">{job_1_wpas}</p>
+            <p class="text-sm font-medium text-gray-900">{name_testimonial_1}</p>
+            <p class="text-sm text-gray-500">{job_testimonial_1}</p>
           </div>
         </div>
       </div>
@@ -66,12 +66,12 @@ const { title_wpas, paragraph_wpas, paragraph_testimonial_1_wpas, paragraph_test
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          {paragraph_testimonial_2_wpas}
+          {paragraph_testimonial_2}
         </p>
         <div class="flex items-center">
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">{name_2_wpas}</p>
-            <p class="text-sm text-gray-500">{job_2_wpas}</p>
+            <p class="text-sm font-medium text-gray-900">{name_testimonial_2}</p>
+            <p class="text-sm text-gray-500">{job_testimonial_2}</p>
           </div>
         </div>
       </div>
@@ -90,12 +90,12 @@ const { title_wpas, paragraph_wpas, paragraph_testimonial_1_wpas, paragraph_test
           </div>
         </div>
         <p class="text-gray-600 mb-4">
-          {paragraph_testimonial_3_wpas}
+          {paragraph_testimonial_3}
         </p>
         <div class="flex items-center">
           <div class="ml-3">
-            <p class="text-sm font-medium text-gray-900">{name_3_wpas}</p>
-            <p class="text-sm text-gray-500">{job_3_wpas}</p>
+            <p class="text-sm font-medium text-gray-900">{name_testimonial_3}</p>
+            <p class="text-sm text-gray-500">{job_testimonial_3}</p>
           </div>
         </div>
       </div>

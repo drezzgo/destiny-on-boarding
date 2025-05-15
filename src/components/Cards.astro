@@ -7,51 +7,78 @@ interface Props {
   paragraph_card_1_how_it_works: string;
 }
 
-const { text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works } = Astro.props;
+const {
+  text1_how_it_works,
+  subtitle_how_it_works,
+  text_how_it_works,
+  title_card_1_how_it_works,
+  paragraph_card_1_how_it_works
+} = Astro.props;
 ---
 
-<section class="relative py-16 sm:py-24 bg-white" aria-labelledby="steps-heading">
-  <!-- Fondo de imagen -->
+<!-- TEXTOS SUPERIORES -->
+<section class="py-16 sm:py-24 bg-white text-center max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <p class="text-blue-600 text-sm font-semibold tracking-wide uppercase opacity-0 transition-opacity duration-1000 reveal">
+    {text1_how_it_works}
+  </p>
+  <h2 class="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 opacity-0 transition-opacity duration-1000 delay-200 reveal"
+      style="font-family: 'Inter Tight', sans-serif;">
+    {subtitle_how_it_works}
+  </h2>
+  <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 opacity-0 transition-opacity duration-1000 delay-500 reveal">
+    {text_how_it_works}
+  </p>
+</section>
+
+<!-- CARDS -->
+<section class="relative py-16 sm:py-24" aria-labelledby="steps-heading">
+  <!-- Fondo con imagen -->
   <div class="absolute inset-0 z-0">
-    <img 
-      src="/path/to/your/image.png" 
-      alt="Fondo decorativo" 
-      class="w-full h-full object-cover opacity-20" 
+    <img
+      src="https://destinyonboard.com/wp-content/uploads/2025/05/2-1.png"
+      alt="Fondo abstracto Destiny On Board"
+      class="w-full h-full object-cover"
+      loading="lazy"
     />
-    <div class="absolute inset-0 bg-gradient-to-t from-white via-white/70 to-transparent"></div>
+    <div class="absolute inset-0 backdrop-blur-sm bg-white/10"></div>
   </div>
 
-  <!-- Contenido -->
+  <!-- Contenido cards -->
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center max-w-4xl mx-auto">
-      <p class="text-blue-600 text-sm font-semibold tracking-wide uppercase animate-fade-in">
-        {text1_how_it_works}
-      </p>
-      <h2 
-        id="steps-heading" 
-        class="mt-2 text-4xl sm:text-5xl font-extrabold tracking-tight text-gray-900 animate-fade-in animation-delay-200"
-        style="font-family: 'Inter Tight', sans-serif;"
-      >
-        {subtitle_how_it_works}
-      </h2>
-      <p class="mt-4 max-w-2xl mx-auto text-lg sm:text-xl text-gray-600 animate-fade-in animation-delay-400">
-        {text_how_it_works}
-      </p>
-    </div>
-
-    <!-- Grid Cards -->
     <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {Array.from({ length: 3 }).map((_, i) => (
-        <div class={`relative group animate-fade-in-up animation-delay-${i * 200}`}>
-          <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-600 to-yellow-400 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
-          <div class="relative bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition duration-300 backdrop-blur-md bg-opacity-90">
-            <div class="flex flex-col items-center text-center">
-              <div class="flex items-center justify-center h-16 w-16 rounded-full bg-gray-100 mb-6">
-                <svg class="h-8 w-8 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path 
-                    stroke-linecap="round" 
-                    stroke-linejoin="round" 
-                    stroke-width="2" 
+      {[
+        {
+          bg: 'bg-red-300',
+          hoverBg: 'hover:bg-white',
+          icon: 'text-red-600',
+          textColor: 'text-black',
+          cardTextColor: 'text-white',
+        },
+        {
+          bg: 'bg-blue-300',
+          hoverBg: 'hover:bg-white',
+          icon: 'text-blue-600',
+          textColor: 'text-black',
+          cardTextColor: 'text-white',
+        },
+        {
+          bg: 'bg-yellow-300',
+          hoverBg: 'hover:bg-white',
+          icon: 'text-yellow-600',
+          textColor: 'text-black',
+          cardTextColor: 'text-black',
+        },
+      ].map((style, i) => (
+        <div class={`relative group opacity-0 transform translate-y-8 transition-all duration-1000 delay-[${i * 300}ms] reveal`}>
+          <div class="absolute -inset-0.5 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-500 group-hover:duration-300"></div>
+          <div class={`relative ${style.bg} rounded-xl p-8 shadow-lg transition duration-300 ${style.hoverBg} group-hover:${style.textColor}`}>
+            <div class={`flex flex-col items-center text-center transition-colors duration-300 group-hover:text-black ${style.cardTextColor}`}>
+              <div class={`flex items-center justify-center h-16 w-16 rounded-full bg-gray-100 mb-6 ${style.icon} transition duration-300 group-hover:animate-bounce`}>
+                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
                     d={
                       i === 0 ? "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
                       : i === 1 ? "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
@@ -60,8 +87,8 @@ const { text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card
                   />
                 </svg>
               </div>
-              <h3 class="text-xl font-semibold text-gray-900 mb-4">{title_card_1_how_it_works}</h3>
-              <p class="text-gray-600">{paragraph_card_1_how_it_works}</p>
+              <h3 class="text-xl font-semibold mb-4">{title_card_1_how_it_works}</h3>
+              <p>{paragraph_card_1_how_it_works}</p>
             </div>
           </div>
         </div>
@@ -70,31 +97,21 @@ const { text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card
   </div>
 </section>
 
-<style>
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 
-  .animate-fade-in-up {
-    animation: fadeIn 0.6s ease-out forwards;
-  }
+<!-- Intersection Observer script para animar solo una vez -->
+<script is:inline>
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-  .animation-delay-0 {
-    animation-delay: 0s;
-  }
-
-  .animation-delay-200 {
-    animation-delay: 0.2s;
-  }
-
-  .animation-delay-400 {
-    animation-delay: 0.4s;
-  }
-</style>
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>

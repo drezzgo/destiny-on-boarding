@@ -17,17 +17,17 @@ export const getPageInfo = async (slug: string) => {
         acf: {paragraph_card_1_how_it_works},
         acf: {title_wpas},
         acf: {paragraph_wpas},
-        acf: {paragraph_testimonial_1_wpas},
-        acf: {paragraph_testimonial_2_wpas},
-        acf: {paragraph_testimonial_3_wpas},
-        acf: {name_1_wpas},
-        acf: {name_2_wpas},
-        acf: {name_3_wpas},
-        acf: {job_1_wpas},
-        acf: {job_2_wpas},
-        acf: {job_3_wpas}
+        acf: {paragraph_testimonial_1},
+        acf: {name_testimonial_1},
+        acf: {job_testimonial_1},
+        acf: {paragraph_testimonial_2},
+        acf: {name_testimonial_2},
+        acf: {job_testimonial_2},
+        acf: {paragraph_testimonial_3},
+        acf: {name_testimonial_3},
+        acf: {job_testimonial_3},
     } = data;
     console.log(data);
 
-    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1_wpas, paragraph_testimonial_2_wpas, paragraph_testimonial_3_wpas, name_1_wpas, name_2_wpas, name_3_wpas, job_1_wpas, job_2_wpas, job_3_wpas };
+    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3 };
 }
