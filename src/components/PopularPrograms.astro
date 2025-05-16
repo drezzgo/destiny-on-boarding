@@ -1,5 +1,24 @@
 ---
 // PopularPrograms.astro
+interface Props {
+  title_pp: string;
+  paragraph_pp: string;
+  name_program_1: string;
+  name_program_2: string;
+  name_program_3: string;
+  name_program_4: string;
+  paragraph_program_1: string;
+  paragraph_program_2: string;
+  paragraph_program_3: string;
+  paragraph_program_4: string;
+  extend_paragraph_program_1: string;
+  extend_paragraph_program_2: string;
+  extend_paragraph_program_3: string;
+  extend_paragraph_program_4: string;
+}
+
+const { title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4 } = Astro.props;
+
 interface Program {
   title: string;
   shortDescription: string;
@@ -9,27 +28,27 @@ interface Program {
 
 const programs: Program[] = [
   {
-    title: "Programa 1",
-    shortDescription: "Un curso intensivo de inglés para principiantes.",
-    longDescription: "Este programa incluye clases en vivo, prácticas conversacionales, y acceso a recursos interactivos.",
+    title: name_program_1,
+    shortDescription: paragraph_program_1,
+    longDescription: extend_paragraph_program_1,
     image: "https://destinyonboard.com/wp-content/uploads/2025/05/smiling-student-holding-book-and-wearing-headphones-ready-for-study.-1462630-scaled.jpg"
   },
   {
-    title: "Programa 2",
-    shortDescription: "Inglés intermedio para viajeros y profesionales.",
-    longDescription: "Aprende a desenvolverte en entornos internacionales con vocabulario útil y simulaciones.",
+    title: name_program_2,
+    shortDescription: paragraph_program_2,
+    longDescription: extend_paragraph_program_2,
     image: "https://destinyonboard.com/wp-content/uploads/2025/05/smiling-young-woman-holding-a-cambridge-book-in-a-vibrant-educational-environment.-20604559-scaled.jpg"
   },
   {
-    title: "Programa 3",
-    shortDescription: "Preparación para exámenes TOEFL / IELTS.",
-    longDescription: "Incluye simulacros, tips estratégicos y acompañamiento personalizado.",
+    title: name_program_3,
+    shortDescription: paragraph_program_3,
+    longDescription: extend_paragraph_program_3,
     image: "https://destinyonboard.com/wp-content/uploads/2025/05/woman-using-laptop-on-outdoor-stairs-studying-online-with-headphones-and-backpack.-3775128-scaled.jpg"
   },
   {
-    title: "Programa 4",
-    shortDescription: "Club de conversación avanzada.",
-    longDescription: "Practica con nativos y mejora tu fluidez con sesiones semanales enfocadas.",
+    title: name_program_4,
+    shortDescription: paragraph_program_4,
+    longDescription: extend_paragraph_program_4,
     image: "https://destinyonboard.com/wp-content/uploads/2025/05/group-of-teenage-friends-sitting-outdoors-smiling-and-having-fun-together.-923657-scaled.jpg"
   }
 ]
@@ -38,10 +57,10 @@ const programs: Program[] = [
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center">
       <h2 id="programs-heading" class="text-3xl font-extrabold text-gray-900 sm:text-4xl">
-        Programas populares
+        {title_pp}
       </h2>
       <p class="mt-4 text-lg text-gray-600">
-        Explora nuestros programas destacados que se adaptan a tus necesidades.
+        {paragraph_pp}
       </p>
     </div>
 
