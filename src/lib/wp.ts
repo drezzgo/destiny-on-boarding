@@ -40,8 +40,16 @@ export const getPageInfo = async (slug: string) => {
         acf: {name_program_4},
         acf: {paragraph_program_4},
         acf: {extend_paragraph_program_4},
+        acf: {title_au},
+        acf: {paragraph_1_au},
+        acf: {paragraph_2_au},
+        acf: {paragraph_3_au},
+        acf: {text_1_au},
+        acf: {text_2_au},
+        acf: {text_bold_au},
+        acf: {button_au},
     } = data;
     console.log(data);
 
-    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3, title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4 };
+    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3, title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4, title_au, paragraph_1_au, paragraph_2_au, paragraph_3_au, text_1_au, text_2_au, text_bold_au, button_au};
 }
