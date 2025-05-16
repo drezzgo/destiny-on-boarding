@@ -48,8 +48,24 @@ export const getPageInfo = async (slug: string) => {
         acf: {text_2_au},
         acf: {text_bold_au},
         acf: {button_au},
+        acf: {question_1},
+        acf: {question_2},
+        acf: {question_3},
+        acf: {question_4},
+        acf: {question_5},
+        acf: {question_6},
+        acf: {question_7},
+        acf: {question_8},
+        acf: {answer_1},
+        acf: {answer_2},
+        acf: {answer_3},
+        acf: {answer_4},
+        acf: {answer_5},
+        acf: {answer_6},
+        acf: {answer_7},
+        acf: {answer_8},
     } = data;
     console.log(data);
 
-    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3, title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4, title_au, paragraph_1_au, paragraph_2_au, paragraph_3_au, text_1_au, text_2_au, text_bold_au, button_au};
+    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3, title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4, title_au, paragraph_1_au, paragraph_2_au, paragraph_3_au, text_1_au, text_2_au, text_bold_au, button_au, question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, answer_1, answer_2, answer_3, answer_4, answer_5, answer_6, answer_7, answer_8 };
 }
