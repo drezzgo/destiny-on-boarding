@@ -48,25 +48,25 @@ const {
     <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       {[
         {
-          bg: 'bg-red-300',
+          bg: 'bg-red-500',
           hoverBg: 'hover:bg-white',
           icon: 'text-red-600',
           textColor: 'text-black',
           cardTextColor: 'text-white',
         },
         {
-          bg: 'bg-blue-300',
+          bg: 'bg-blue-500',
           hoverBg: 'hover:bg-white',
           icon: 'text-blue-600',
           textColor: 'text-black',
           cardTextColor: 'text-white',
         },
         {
-          bg: 'bg-yellow-300',
+          bg: 'bg-yellow-500',
           hoverBg: 'hover:bg-white',
           icon: 'text-yellow-600',
           textColor: 'text-black',
-          cardTextColor: 'text-black',
+          cardTextColor: 'text-white',
         },
       ].map((style, i) => (
         <div class={`relative group opacity-0 transform translate-y-8 transition-all duration-1000 delay-[${i * 300}ms] reveal`}>
@@ -95,11 +95,28 @@ const {
       ))}
     </div>
   </div>
+  
 </section>
 
+<style>
+  @keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  /* Pause on hover */
+  .animate-scroll:hover {
+    animation-play-state: paused;
+  }
+</style>
 
 <!-- Intersection Observer script para animar solo una vez -->
 <script is:inline>
+  
   const observer = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach(entry => {
@@ -114,4 +131,11 @@ const {
   );
 
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+<script is:inline type="text/astro">
+  const LogoItem = ({ src, alt }) => (
+    <div class="rounded-xl border border-gray-200 p-4 min-w-[120px] h-[80px] flex items-center justify-center bg-white shadow-sm hover:shadow-md hover:scale-105 transition-all duration-300 ease-in-out hover:border-yellow-400 hover:bg-yellow-100 cursor-pointer group">
+      <img src={src} alt={alt} class="h-full object-contain grayscale group-hover:grayscale-0 transition duration-300" />
+    </div>
+  );
 </script>
