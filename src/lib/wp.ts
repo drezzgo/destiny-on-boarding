@@ -15,6 +15,10 @@ export const getPageInfo = async (slug: string) => {
         acf: {text_how_it_works},
         acf: {title_card_1_how_it_works},
         acf: {paragraph_card_1_how_it_works},
+        acf: {title_card_2_how_it_works},
+        acf: {paragraph_card_2_how_it_works},
+        acf: {title_card_3_how_it_works},
+        acf: {paragraph_card_3_how_it_works},
         acf: {title_wpas},
         acf: {paragraph_wpas},
         acf: {paragraph_testimonial_1},
@@ -67,5 +71,5 @@ export const getPageInfo = async (slug: string) => {
     } = data;
     console.log(data);
 
-    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3, title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4, title_au, paragraph_1_au, paragraph_2_au, paragraph_3_au, text_1_au, text_2_au, text_bold_au, button_au, question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, answer_1, answer_2, answer_3, answer_4, answer_5, answer_6, answer_7, answer_8 };
+    return { title, hero_paragraph, button, text1_how_it_works, subtitle_how_it_works, text_how_it_works, title_card_1_how_it_works, paragraph_card_1_how_it_works, title_card_2_how_it_works, paragraph_card_2_how_it_works, title_card_3_how_it_works, paragraph_card_3_how_it_works, title_wpas, paragraph_wpas, paragraph_testimonial_1, name_testimonial_1, job_testimonial_1, paragraph_testimonial_2, name_testimonial_2, job_testimonial_2, paragraph_testimonial_3, name_testimonial_3, job_testimonial_3, title_pp, paragraph_pp, name_program_1, paragraph_program_1, extend_paragraph_program_1, name_program_2, paragraph_program_2, extend_paragraph_program_2, name_program_3, paragraph_program_3, extend_paragraph_program_3, name_program_4, paragraph_program_4, extend_paragraph_program_4, title_au, paragraph_1_au, paragraph_2_au, paragraph_3_au, text_1_au, text_2_au, text_bold_au, button_au, question_1, question_2, question_3, question_4, question_5, question_6, question_7, question_8, answer_1, answer_2, answer_3, answer_4, answer_5, answer_6, answer_7, answer_8 };
 }

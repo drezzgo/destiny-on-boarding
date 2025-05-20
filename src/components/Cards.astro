@@ -1,19 +1,30 @@
 ---
-interface Props {
-  text1_how_it_works: string;
-  subtitle_how_it_works: string;
-  text_how_it_works: string;
-  title_card_1_how_it_works: string;
-  paragraph_card_1_how_it_works: string;
-}
-
 const {
   text1_how_it_works,
   subtitle_how_it_works,
   text_how_it_works,
   title_card_1_how_it_works,
-  paragraph_card_1_how_it_works
+  paragraph_card_1_how_it_works,
+   title_card_2_how_it_works,
+  paragraph_card_2_how_it_works,
+  title_card_3_how_it_works,
+  paragraph_card_3_how_it_works
 } = Astro.props;
+
+const cardsContent = [
+  {
+    title: title_card_1_how_it_works,
+    paragraph: paragraph_card_1_how_it_works,
+  },
+  {
+    title: title_card_2_how_it_works,
+    paragraph: paragraph_card_2_how_it_works,
+  },
+  {
+    title: title_card_3_how_it_works,
+    paragraph: paragraph_card_3_how_it_works,
+  },
+];
 ---
 
 <!-- TEXTOS SUPERIORES -->
@@ -44,57 +55,66 @@ const {
   </div>
 
   <!-- Contenido cards -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-      {[
-        {
-          bg: 'bg-red-500',
-          hoverBg: 'hover:bg-white',
-          icon: 'text-red-600',
-          textColor: 'text-black',
-          cardTextColor: 'text-white',
-        },
-        {
-          bg: 'bg-blue-500',
-          hoverBg: 'hover:bg-white',
-          icon: 'text-blue-600',
-          textColor: 'text-black',
-          cardTextColor: 'text-white',
-        },
-        {
-          bg: 'bg-yellow-500',
-          hoverBg: 'hover:bg-white',
-          icon: 'text-yellow-600',
-          textColor: 'text-black',
-          cardTextColor: 'text-white',
-        },
-      ].map((style, i) => (
-        <div class={`relative group opacity-0 transform translate-y-8 transition-all duration-1000 delay-[${i * 300}ms] reveal`}>
-          <div class="absolute -inset-0.5 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-500 group-hover:duration-300"></div>
-          <div class={`relative ${style.bg} rounded-xl p-8 shadow-lg transition duration-300 ${style.hoverBg} group-hover:${style.textColor}`}>
-            <div class={`flex flex-col items-center text-center transition-colors duration-300 group-hover:text-black ${style.cardTextColor}`}>
-              <div class={`flex items-center justify-center h-16 w-16 rounded-full bg-gray-100 mb-6 ${style.icon} transition duration-300 group-hover:animate-bounce`}>
-                <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d={
-                      i === 0 ? "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                      : i === 1 ? "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
+ <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+    {[
+      {
+        bg: 'bg-red-500',
+        hoverBg: 'hover:bg-white',
+        icon: 'text-red-600',
+        textColor: 'text-black',
+        cardTextColor: 'text-white',
+        title: Astro.props.title_card_1_how_it_works,
+        paragraph: Astro.props.paragraph_card_1_how_it_works
+      },
+      {
+        bg: 'bg-blue-500',
+        hoverBg: 'hover:bg-white',
+        icon: 'text-blue-600',
+        textColor: 'text-black',
+        cardTextColor: 'text-white',
+        title: Astro.props.title_card_2_how_it_works,
+        paragraph: Astro.props.paragraph_card_2_how_it_works
+      },
+      {
+        bg: 'bg-yellow-500',
+        hoverBg: 'hover:bg-white',
+        icon: 'text-yellow-600',
+        textColor: 'text-black',
+        cardTextColor: 'text-white',
+        title: Astro.props.title_card_3_how_it_works,
+        paragraph: Astro.props.paragraph_card_3_how_it_works
+      },
+    ].map((style, i) => (
+      <div class={`relative group opacity-0 transform translate-y-8 transition-all duration-1000 delay-[${i * 300}ms] reveal`}>
+        <div class="absolute -inset-0.5 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-500 group-hover:duration-300"></div>
+        <div class={`relative ${style.bg} rounded-xl p-8 shadow-lg transition duration-300 ${style.hoverBg} group-hover:${style.textColor}`}>
+          <div class={`flex flex-col items-center text-center transition-colors duration-300 group-hover:text-black ${style.cardTextColor}`}>
+            <div class={`flex items-center justify-center h-16 w-16 rounded-full bg-gray-100 mb-6 ${style.icon} transition duration-300 group-hover:animate-bounce`}>
+              <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d={
+                    i === 0
+                      ? "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      : i === 1
+                      ? "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"
                       : "M13 10V3L4 14h7v7l9-11h-7z"
-                    }
-                  />
-                </svg>
-              </div>
-              <h3 class="text-xl font-semibold mb-4">{title_card_1_how_it_works}</h3>
-              <p>{paragraph_card_1_how_it_works}</p>
+                  }
+                />
+              </svg>
             </div>
+            <h3 class="text-xl font-semibold mb-4">{style.title}</h3>
+            <p>{style.paragraph}</p>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </div>
+</div>
+
   
 </section>
 
