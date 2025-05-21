@@ -95,12 +95,12 @@
         });
         if (response.ok) {
           form.reset();
-          alert('¡Gracias! Tu mensaje fue enviado correctamente.');
+          window.location.href = '/astro-test/thanks';
         } else {
-          alert('Hubo un problema al enviar el formulario. Intenta de nuevo.');
+          alert('There was a problem sending the form. Please try again.');
         }
       } catch {
-        alert('No se pudo enviar el formulario. Revisa tu conexión.');
+        alert('Could not send the form. Please check your connection.');
       }
     });
   });
