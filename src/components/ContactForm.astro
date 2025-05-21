@@ -19,10 +19,8 @@
         action="https://formsubmit.co/agongoraramirez@gmail.com"
         method="POST"
       >
-        <!-- Ocultos para FormSubmit -->
-        <input type="hidden" name="_cc" value="nicolas.perezcallejas@gmail.com" />
+        <input type="hidden" name="_cc" value="nicolas.perezcallejas@gmail.com,nicolasospina2963@gmail.com" />
         <input type="hidden" name="_captcha" value="false" />
-        <input type="hidden" name="_next" value="/thanks" />
         <input type="text" name="_honey" style="display: none;" />
 
         <div>
@@ -79,3 +77,31 @@
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      // Antispam
+      if (formData.get('_honey')) return;
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (response.ok) {
+          form.reset();
+          alert('¡Gracias! Tu mensaje fue enviado correctamente.');
+        } else {
+          alert('Hubo un problema al enviar el formulario. Intenta de nuevo.');
+        }
+      } catch {
+        alert('No se pudo enviar el formulario. Revisa tu conexión.');
+      }
+    });
+  });
+</script>
