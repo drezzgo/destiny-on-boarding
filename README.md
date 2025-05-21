@@ -1,47 +1,62 @@
-# Astro Starter Kit: Basics
+# 🌐 Astro + WordPress + ACF: Static Site Generator
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este proyecto es una integración entre [Astro](https://astro.build/), [WordPress](https://wordpress.org/) como Headless CMS y campos personalizados creados con el plugin [ACF (Advanced Custom Fields)](https://www.advancedcustomfields.com/). El sitio genera páginas estáticas que se consumen desde la API REST de WordPress y se despliegan manualmente en servidores compartidos como **Bluehost**.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🚀 Tecnologías utilizadas
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+- ⚡ [Astro](https://astro.build/) – Framework moderno para sitios estáticos
+- 🧠 WordPress + ACF – CMS headless con campos personalizados
+- 🔗 REST API – Consumo de contenidos desde WordPress
+- 🧱 HTML, CSS, JS – Estilización y lógica propia
+- 🧳 Deploy en Bluehost – Usando File Manager de cPanel
+
+---
+
+## 📸 Capturas (opcional)
+
+![shotsnapp-1747801332 649](https://github.com/user-attachments/assets/f43903cd-5c9e-49e4-8d7f-ca851b3cb3dc)
+![shotsnapp-1747801225 717](https://github.com/user-attachments/assets/d0905bf7-1851-4d62-a669-fd5563027a4d)
+
+---
+
+## 🧩 Funcionalidades
+
+- 🔍 Lectura dinámica de páginas mediante `slug`
+- 🧠 Soporte para campos personalizados desde ACF
+- ♻️ Datos actualizados desde el panel de WordPress
+- 📁 Estructura modular con Astro components
+- 🛠️ Build estático para deploy en cPanel (Bluehost, etc)
+
+---
 
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
 
 ```text
-/
+astro-wordpress-acf-site/
 ├── public/
-│   └── favicon.svg
 ├── src/
+│   ├── components/
 │   ├── layouts/
-│   │   └── Layout.astro
 │   └── pages/
-│       └── index.astro
-└── package.json
+├── .gitignore
+├── astro.config.mjs
+├── package.json
+├── README.md  ← ¡AQUÍ VA LO QUE TE DOY!
+├── tsconfig.json
+└── ...
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## ⚙️ Cómo usar
 
-## 🧞 Commands
+### 1. Clonar el repositorio
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+git clone https://github.com/tu-usuario/astro-wordpress-acf-site.git
+cd astro-wordpress-acf-site
 
 ## 👀 Want to learn more?
 
