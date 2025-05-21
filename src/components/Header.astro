@@ -1,40 +1,56 @@
 <header class="w-full bg-white shadow-md fixed top-0 left-0 z-50">
-    <nav class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
-      
-      <!-- Logo -->
-      <a href="#hero" class="flex items-center gap-2">
-        <img src="https://destinyonboard.com/wp-content/uploads/2025/05/cropped-logo-DoB-01.png" class="h-16" alt="Destiny On Boarding logo" />
-      </a>
-  
-      <!-- Desktop Menu -->
-      <ul class="hidden md:flex items-center gap-8 text-gray-600 text-sm font-medium">
-        <li><a href="http://destinyonboard.com/astro-test/#hero" class="hover:text-gray-900 transition">About Us</a></li>
-        <li><a href="http://destinyonboard.com/astro-test/#programs" class="hover:text-gray-900 transition">Programs</a></li>
-        <li><a href="http://destinyonboard.com/astro-test/#testimonials" class="hover:text-gray-900 transition">Testimonials</a></li>
-      </ul>
-  
-      <!-- Right icons and button -->
-      <div class="flex items-center gap-4">
-        <!-- Social Icons -->
-        <div class="hidden md:flex gap-3 text-gray-700 text-lg">
-          <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://x.com" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
-  
-        <!-- Call to Action -->
-        <a href="#contact" class="bg-[#F7C75C] text-gray-900 font-semibold px-5 py-2 rounded-full hover:bg-[#E6B94F] transition text-sm">
-          Contact Us
-        </a>
-  
-        <!-- Mobile Menu Button -->
-        <button class="md:hidden">
-          <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+  <nav class="max-w-screen-xl mx-auto px-4 py-3 flex items-center justify-between">
+    
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-2">
+      <img src="https://destinyonboard.com/wp-content/uploads/2025/05/cropped-logo-DoB-01.png" class="h-16" alt="Destiny On Boarding logo" />
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-8 text-gray-600 text-sm font-medium">
+      <li><a href="http://destinyonboard.com/astro-test/#hero" class="hover:text-gray-900 transition">About Us</a></li>
+      <li><a href="http://destinyonboard.com/astro-test/#programs" class="hover:text-gray-900 transition">Programs</a></li>
+      <li><a href="http://destinyonboard.com/astro-test/#testimonials" class="hover:text-gray-900 transition">Testimonials</a></li>
+    </ul>
+
+    <!-- Right icons and button -->
+    <div class="flex items-center gap-4">
+      <!-- Social Icons -->
+      <div class="hidden md:flex gap-3 text-gray-700 text-lg">
+        <a href="https://facebook.com" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://x.com" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://instagram.com" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
       </div>
-    </nav>
-  </header>
-  
+
+      <!-- Call to Action -->
+      <a href="#contact" class="bg-[#F7C75C] text-gray-900 font-semibold px-5 py-2 rounded-full hover:bg-[#E6B94F] transition text-sm">
+        Contact Us
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-button" class="md:hidden focus:outline-none">
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Sidebar Overlay -->
+  <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+  <!-- Mobile Sidebar -->
+  <aside id="mobile-sidebar" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6">
+    <div class="flex justify-between items-center mb-8">
+      <h2 class="text-lg font-semibold text-gray-700">Menu</h2>
+      <button id="close-sidebar" class="text-gray-600 hover:text-gray-900 text-2xl font-bold">&times;</button>
+    </div>
+    <ul class="flex flex-col gap-4 text-gray-700 text-base">
+      <li><a href="http://destinyonboard.com/astro-test/#hero" class="hover:text-gray-900 transition">About Us</a></li>
+      <li><a href="http://destinyonboard.com/astro-test/#programs" class="hover:text-gray-900 transition">Programs</a></li>
+      <li><a href="http://destinyonboard.com/astro-test/#testimonials" class="hover:text-gray-900 transition">Testimonials</a></li>
+      <li><a href="http://destinyonboard.com/astro-test/#contact" class="bg-[#F7C75C] text-gray-900 font-semibold px-4 py-2 rounded-full hover:bg-[#E6B94F] transition text-center w-full block">Contact Us</a></li>
+    </ul>
+  </aside>
+</header>
